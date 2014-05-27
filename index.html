@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Time Zone</title>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <!--<link rel="stylesheet" href="css/bootstrap.min.css"> -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/foundation.css">
+
+  <script type="text/javascript" src="//use.typekit.net/xdk7hui.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+</head>
+
+<body>
+  <script type="text/x-handlebars">
+      {{outlet}}
+  </script>
+
+  <script type="text/x-handlebars" id="index"> 
+      <div class="container main">
+
+        <div id="main-row" class="row">
+
+          <div class="large-4 large-offset-1 columns input-area">
+    
+            <div id="container-left">
+              <figure class="clock" id="clock-first"></figure>
+              <div id="digital-first"></div>
+            </div>
+
+            <div class="input-area" style="min-height: 42px;"> 
+              <input type="text" name="srch-location" id="location-first" placeholder="Enter a Location">
+              <input type="text" name="srch-timezone" id="tz-first" placeholder="Enter a Time Zone">
+            </div>
+
+          </div>
+
+          <div id="showTime" class="time-difference large-2 columns">
+              <br />
+              <div id="timeDifference"></div>
+          </div>
+
+          <div class="large-4 columns input-area">
+            <div id="container-right">
+              <figure class="clock" id="clock-second"></figure>
+              <div id="digital-second"></div>
+            </div>
+
+            <div class="input-area" style="min-height: 42px;"> 
+              <input type="text" name="srch-location" id="location-second" placeholder="Enter a Location"> 
+              <input type="text" name="srch-timezone" id="tz-second" placeholder="Enter a Time Zone">
+            </div>
+            
+          </div>
+            <div class="large-1 columns"></div>
+        </div>
+
+        <div id="srch-selector" class="row">
+          <h2 id="label-location" class="small-1 small-offset-4 columns light" style="text-align:right;">Location</h2>
+
+          <div class="onoffswitch small-2 columns">
+            <div class="small-8 small-centered columns">
+            <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch">
+            <label class="onoffswitch-label" for="myonoffswitch">
+                <div class="onoffswitch-inner"></div>
+                <div class="onoffswitch-switch"></div>
+            </label>
+            </div>
+          </div>
+
+          <h2 id="label-zone" class="small-2 columns dark" style="float:left;">Time Zone</h2>
+        </div>
+
+        <footer class="row">
+            <div class="large-6 large-centered columns">
+              <a href="">Designer</a>
+              &middot;
+              <a href="">Developer</a>
+            </div>
+        </footer>
+
+      </div>
+
+  </script> 
+
+  <div class="modal">
+    <h2>Please wait, we are acquiring your location...</h2>
+    <div class="spinner">
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+    </div>
+  </div>
+
+  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAN88keM0en7duMp7_nxfoxmfHFKGptVgI&sensor=false&libraries=places"></script>
+  <!--<script type="text/javascript" src="httsps://www.google.com/jsapi"></script> -->
+
+  <!--Application JS -->
+  <script src="js/libs/jquery-1.10.2.min.js"></script>
+  <script src="js/libs/jquery-ui-1.10.4.js"></script>
+  <script src="js/libs/handlebars-1.1.2.js"></script>
+  <script src="js/libs/ember-1.2.0.min.js"></script>
+  <script src="js/app.js"></script>
+  <script src="data/zonedata.js"></script>
+
+  <!--Clock JS -->
+  <script src="js/libs/moment.min.js"></script>
+  <script src="js/libs/svg.js"></script>
+  <script src="js/libs/svg.easing.js"></script>
+  <script src="js/libs/svg.clock.js"></script>
+
+</body>
+</html>
